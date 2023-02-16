@@ -4,14 +4,47 @@
 <!-- Welcome the user to the chat bot-->
   <category>
     <pattern>*</pattern>
-    <template>Welcome to the Computer Science Carrer Chatbot!! I am going to ask you a series of questions to direct you towards a fitting career. Are you ready to begin?
+    <template>Welcome to the Computer Science Carrer Chatbot!!<br></br><br></br>
+    Would you like to see the job list or have a job recommended to you?
     <button>
-        <text>Ready!</text>
+        <text>Job List</text>
+        <postback>joblist</postback>
+    </button>
+    <button>
+        <text>Recommentation</text>
         <postback>begin</postback>
     </button>
     </template>
   </category>
   
+<!-- Job List -->
+<category>
+    <pattern>joblist</pattern>
+    <template>Please select a job to learn more:
+        <button>
+            <text>Software Developer</text>
+            <postback>sd</postback>
+        </button>
+        <button>
+            <text>Database Admin</text>
+            <postback>dba</postback>
+        </button>
+        <button>
+            <text>IT Project Manager</text>
+            <postback>itpm</postback>
+        </button>
+        <button>
+            <text>DevOps Engineer</text>
+            <postback>dops</postback>
+        </button>
+        <button>
+            <text>Penatration Tester</text>
+            <postback>pt</postback>
+        </button>
+    </template>
+</category>
+  
+<!-- Start questions -->
 <!-- determine if they could be a project manager -->
   <category>
       <pattern>begin</pattern>
@@ -146,9 +179,13 @@
 <!-- message if user does not like any of the jobs -->
 <category>
     <pattern>nojobs</pattern>
-    <template>No jobs can be recommended at this time. Would you like to go through the questions again?
+    <template>No jobs can be recommended at this time. Would you like to go through the questions again or view the job list?
         <button>
-            <text>Yes</text>
+            <text>Job List</text>
+            <postback>joblist</postback>
+        </button>
+        <button>
+            <text>Recommendations</text>
             <postback>begin</postback>
         </button>
     </template>

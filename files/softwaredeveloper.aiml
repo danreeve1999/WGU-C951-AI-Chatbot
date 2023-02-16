@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- insert your AIML categories here -->
-	<!-- Recommend job and ask if user wants to learn more -->
+    
+<!-- Learn more from job list -->
+	<category>
+	    <pattern>sd</pattern>
+	    <template>Software Developer:
+	    <br></br><br></br> Would you like to learn more?
+	    <button>
+	        <text>Yes</text>
+	        <url>https://www.wgu.edu/career-guide/information-technology/computer-programming-career.html</url>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nolearnmore</postback>
+        </button>
+	    </template>
+    </category>
+	
+<!-- recommend job -->	
 	<category>
 	    <pattern>softwaredeveloper</pattern>
 	    <template>I recommend the Software Developer job based on your answers.
@@ -20,9 +36,13 @@
 <!-- ask if user wants to return to job questions -->
     <category>
         <pattern>nolearnmore</pattern>
-        <template>Would you like to reanswer the questions for another job recommendation?
+        <template>Would you like to reanswer the questions for another job recommendation or go to the job list?
         <button>
-            <text>Yes</text>
+            <text>Job List</text>
+            <postback>joblist</postback>
+        </button>
+        <button>
+            <text>Recommendation</text>
             <postback>begin</postback>
         </button>
         </template>
