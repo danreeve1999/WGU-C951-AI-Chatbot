@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Recommend job and ask if user wants to learn more -->
+	<category>
+	    <pattern>databaseadmin</pattern>
+	    <template>I recommend the Database Admin job based on your answers.
+	    <br></br><br></br> Would you like to learn more?
+	    <button>
+	        <text>Yes</text>
+	        <url>https://www.wgu.edu/career-guide/information-technology/data-admin-career.html</url>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nolearnmore</postback>
+        </button>
+	    </template>
+    </category>
+
+<!-- ask if user wants to return to job questions -->
+    <category>
+        <pattern>nolearnmore</pattern>
+        <template>Would you like to reanswer the questions for another job recommendation?
+        <button>
+            <text>Yes</text>
+            <postback>begin</postback>
+        </button>
+        </template>
+    </category>
+</aiml>

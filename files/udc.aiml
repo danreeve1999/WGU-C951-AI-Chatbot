@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<!-- Welcome the user to the chat bot-->
+  <category>
+    <pattern>*</pattern>
+    <template>Welcome to the Computer Science Carrer Chatbot!! I am going to ask you a series of questions to direct you towards a fitting career. Are you ready to begin?
+    <button>
+        <text>Ready!</text>
+        <postback>begin</postback>
+    </button>
+    </template>
+  </category>
+  
+<!-- determine if they could be a project manager -->
+  <category>
+      <pattern>begin</pattern>
+      <template> Do you prefer being on a team or in charge of a team?
+          <button>
+              <text>On Team</text>
+              <postback>nextquestion1</postback>
+          </button>
+          <button>
+              <text>In Charge</text>
+              <postback>itprojectmanager</postback>  <!-- directs user to the IT project manager job -->
+          </button>
+      </template>
+  </category>
+  
+ <!-- determine if they like cycber security -->
+ <category>
+     <pattern>nextquestion1</pattern>
+     <template> Are you interested in cyber security?
+         <button>
+             <text>Yes</text>
+             <postback>nextquestion2</postback>
+         </button>
+         <button>
+             <text>No</text>
+             <postback>nextquestion3</postback>
+         </button>
+     </template>
+ </category>
+ 
+<category>
+    <pattern>nextquestion2</pattern>
+    <template> Would you like to find vulnerablities in a system in order to prevent others from exploiting them?
+        <button>
+            <text>Yes</text>
+            <postback>pentester</postback> <!-- directs user to the pen tester job -->
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nextquestion3</postback>
+        </button>
+    </template>
+</category>
+
+<!-- determine if they like programming -->
+<category>
+    <pattern>nextquestion3</pattern>
+    <template> Do you like coding in languages such as Java, Python or C++?
+        <button>
+            <text>Yes</text>
+            <postback>nextquestion4</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nextquestion5</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>nextquestion4</pattern>
+    <template> Would you enjoy developing software with the previously mentioned languages?
+        <button>
+            <text>Yes</text>
+            <postback>softwaredeveloper</postback> <!-- directs user to the software developer job -->
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nextquestion5</postback>
+        </button>
+    </template>
+</category>
+
+<!-- determine if they like design -->
+<category>
+    <pattern>nextquestion5</pattern>
+    <template> Do you like measuring and monitoring application performance?
+        <button>
+            <text>Yes</text>
+            <postback>nextquestion6</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nextquestion7</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>nextquestion6</pattern>
+    <template> Would you like to be the one that deploys updates to the company's software package?
+        <button>  
+            <text>Yes</text>
+            <postback>devops</postback> <!-- directs user to the devops job -->
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nextquestion7</postback>
+        </button>
+    </template>
+</category>
+
+<!-- determine if they like databases -->
+<category>
+    <pattern>nextquestion7</pattern>
+    <template> Do you like using languages like SQL or OQL?
+        <button>
+            <text>Yes</text>
+            <postback>nextquestion8</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nojobs</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>nextquestion8</pattern>
+    <template> Do you like creating or updating databases?
+        <button>
+            <text>Yes</text>
+            <postback>databaseadmin</postback> <!-- directs user to the database admin job -->
+        </button>
+        <button>
+            <text>No</text>
+            <postback>nojobs</postback>
+        </button>
+    </template>
+</category>
+
+<!-- message if user does not like any of the jobs -->
+<category>
+    <pattern>nojobs</pattern>
+    <template>No jobs can be recommended at this time. Would you like to go through the questions again?
+        <button>
+            <text>Yes</text>
+            <postback>begin</postback>
+        </button>
+    </template>
+</category>
+
+</aiml>
